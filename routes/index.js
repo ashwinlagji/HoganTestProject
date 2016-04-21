@@ -15,9 +15,9 @@ router.get('/helloworld', function(req, res) {
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
-    var collection = db.get('usercollection');
+    var collection = db.get('udata');
     collection.find({},{},function(e,docs){
-        res.render('hoganUse', {
+        res.render('userlist', {
             "userlist" : docs
         });
     });
@@ -40,7 +40,7 @@ router.post('/adduser', function(req, res) {
     console.log(userName);
     console.log(userEmail);
     // Set our collection
-    var collection = db.get('usercollection');
+    var collection = db.get('udata');
 
     // Submit to the DB
     collection.insert({

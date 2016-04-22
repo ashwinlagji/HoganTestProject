@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var userSchema = new Schema({
-    _id: String,
-    username: String
+    _id: String
+    , username: String
 });
 
 // the schema is useless so far

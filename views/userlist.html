@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <style>
+        ul li {
+            list-style: none
+        }
         
+        tr:nth-child(even) {
+            background: #CCC
+        }
         
-      
+        tr:nth-child(odd) {
+            background-color: blanchedalmond
+        }
     </style>
-  </head>
-  <body >
-  
-  <ul>
-  {{#userlist}}
-      <li>User Name :{{uid}} Email:{{email}}</li>
-   {{/userlist}}
-    </ul>
-  </body>
+</head>
+
+<body>
+
+
+    <h4>Users in the database</h4>
+    
+    <div style="width:50%">
+        <hr>
+        <table>
+            <thead>
+                <td>User Name </td>
+                <td>Email</td>
+            </thead>
+
+            {{#userlist}}
+            <tr>
+                <td>{{uid}} </td>
+                <td>{{email}}</td>
+            </tr>
+            {{/userlist}}
+
+        </table>
+    </div>
+</body>
+
 </html>
